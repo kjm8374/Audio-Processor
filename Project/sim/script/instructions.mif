@@ -1,0 +1,20 @@
+DEPTH = 32; % Memory depth and width are required. DEPTH is the number of addresses %
+WIDTH = 10; % WIDTH is the number of bits of data per word %
+% DEPTH and WIDTH should be entered as decimal numbers %
+ADDRESS_RADIX = DEC; % Address and value radixes are required %
+DATA_RADIX    = BIN; % Enter BIN, DEC, HEX, OCT, or UNS; unless %
+ % otherwise specified, radixes = HEX %
+-- Specify values for addresses, which can be single address or range
+CONTENT
+BEGIN
+0   : 0010000000;   -- play ch 1 once
+1   : 0001000000;   -- play ch 0 once
+2   : 1011001000;   -- seek both channels quarter way
+3   : 0011100000;   -- play both channels repeating
+4   : 1111000000;   -- stop both channels
+5   : 0011100000;   -- play both channels repeating
+6   : 0100000000;   -- pause both channels
+7   : 1001001000;   -- seek ch 0 quarter way
+8   : 0011100000;   -- play both channels repeating
+[9..31] : 0000000000;
+END;
